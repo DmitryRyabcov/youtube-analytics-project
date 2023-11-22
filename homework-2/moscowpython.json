@@ -1,8 +1,8 @@
 {
-    "id": "UC-OVMPlMA3-YCIeg4z5z23A",
+    "_Channel__id": "UC-OVMPlMA3-YCIeg4z5z23A",
     "info": {
         "kind": "youtube#channelListResponse",
-        "etag": "9SI7gaXJGC1lvmB10IfBwyMYG-g",
+        "etag": "YuhC-QjM_9iO_UPFgbDrmVzkamw",
         "pageInfo": {
             "totalResults": 1,
             "resultsPerPage": 5
@@ -10,7 +10,7 @@
         "items": [
             {
                 "kind": "youtube#channel",
-                "etag": "_7SwZRA9FIY4uX5IfQ18KsfZObA",
+                "etag": "04iKBxvgZZSZqqTB8YIL1Vkfbmo",
                 "id": "UC-OVMPlMA3-YCIeg4z5z23A",
                 "snippet": {
                     "title": "MoscowPython",
@@ -41,7 +41,7 @@
                     "country": "RU"
                 },
                 "statistics": {
-                    "viewCount": "2462704",
+                    "viewCount": "2463259",
                     "subscriberCount": "26800",
                     "hiddenSubscriberCount": false,
                     "videoCount": "721"
@@ -54,6 +54,6 @@
     "url": "https://www.youtube.com/@moscowdjangoru",
     "subscriberCount": 26800,
     "video_count": 721,
-    "viewCount": 2462704,
+    "viewCount": 2463259,
     "channel_id": "\u041d\u043e\u0432\u043e\u0435 \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435"
 }
