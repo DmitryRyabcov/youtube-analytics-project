@@ -17,7 +17,7 @@ class Channel(YouTube):
     def __init__(self, channel_id: str):
         """Экземпляр инициализируется id канала. Дальше все данные будут подтягиваться по API."""
         self.__id = channel_id
-        channel = self.get_service().channels().list(id=self.__id, part='snippet,statistics').execute()
+        channel = self.get_service().channels().list(id=self.id, part='snippet,statistics').execute()
         self.info = channel
         self.title = self.info['items'][0]['snippet']['title']
         self.description = self.info['items'][0]['snippet']['description']
@@ -27,7 +27,7 @@ class Channel(YouTube):
         self.viewCount = int(self.info['items'][0]['statistics']['viewCount'])
 
     @property
-    def id(self):
+    def сhannel_id(self):
         return self.__id
 
     def print_info(self):
