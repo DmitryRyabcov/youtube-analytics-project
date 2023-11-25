@@ -14,21 +14,20 @@ class YouTube():
 class Channel(YouTube):
     """Класс для ютуб-канала"""
 
-    def __init__(self, channel_id: str):
+    def __init__(self, channel_id: str) -> None:
+        channel = self.get_service().channels().list(id=channel_id, part='snippet,statistics').execute()
         """Экземпляр инициализируется id канала. Дальше все данные будут подтягиваться по API."""
-        self.__id = channel_id
-        channel = self.get_service().channels().list(id=self.id, part='snippet,statistics').execute()
-        self.info = channel
-        self.title = self.info['items'][0]['snippet']['title']
-        self.description = self.info['items'][0]['snippet']['description']
-        self.url = 'https://www.youtube.com/' + self.info['items'][0]['snippet']['customUrl']
-        self.subscriberCount = int(self.info['items'][0]['statistics']['subscriberCount'])
-        self.video_count = int(self.info['items'][0]['statistics']['videoCount'])
-        self.viewCount = int(self.info['items'][0]['statistics']['viewCount'])
+        self.__channel_id = channel_id
+        self.title = channel["items"][0]["snippet"]["title"]
+        self.description = channel["items"][0]["snippet"]["description"]
+        self.url = f"https://www.youtube.com/channel/{self.__channel_id}"
+        self.viewCount = channel["items"][0]["statistics"]["viewCount"]
+        self.subscriberCount = int(channel["items"][0]["statistics"]["subscriberCount"])
+        self.video_count = channel["items"][0]["statistics"]["videoCount"]
 
     @property
-    def сhannel_id(self):
-        return self.__id
+    def channel_id(self):
+        return self.__channel_id
 
     def print_info(self):
         """Выводит в консоль информацию о канале."""
